@@ -20,11 +20,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="icon.png">
+    <title>About game: Silent Hill 2</title>
+    <link rel="stylesheet" href="Silent Hill.css">
 </head>
 <body>
     
 </body>
 </html>
 ```
-Основной скелет оставим без особых изменений. Поменяем только title на "About Name_Game".
+Основной скелет оставим без особых изменений. Поменяем `title` на "About game: Name_Game". Подключим [иконку](https://github.com/TeachKait20/NoneCode/blob/main/games+git/icon.png?raw=true) для страницы. И создадим и соединим файл CSS с HTML. 
+
