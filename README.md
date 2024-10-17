@@ -12,6 +12,7 @@
 
 ### Карточка Silent Hill 2
 <img src="https://github.com/TeachKait20/NoneCode/blob/main/games+git/About%20game_%20Silent%20Hill%202.png?raw=true">
+
 ## html часть
 ```html
 <!DOCTYPE html>
@@ -26,4 +27,4 @@
 </body>
 </html>
 ```
-Основной скелет оставим без особых изменений.
+Основной скелет оставим без особых изменений. Поменяем только title на "About Name_Game".
