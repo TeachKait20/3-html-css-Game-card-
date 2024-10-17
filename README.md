@@ -9,6 +9,9 @@
 * Разработчика.
 * Основные особенности игры.
 * Интересный факт о разработке или её влиянии на индустрию.
+
+### Карточка Silent Hill 2
+<img src="https://github.com/TeachKait20/NoneCode/blob/main/games+git/About%20game_%20Silent%20Hill%202.png?raw=true">
 ## html часть
 ```html
 <!DOCTYPE html>
