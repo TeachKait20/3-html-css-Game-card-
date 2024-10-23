@@ -73,11 +73,174 @@
 ```
 `div` с id content, будет основным содержимым с контентом. В нём по порядку будут распологаться текст и изображения. <br><br>
 Заголовок с игрой будет в `h1`, а остальной текст в абзацах `p`. <br><br>
-в `div` links-end и end, конечная информация.
+в `div` links-end и end, конечная информация. <br><br>
 В тегах `span` будут ссылки на разные источники с игрой и логотипы.
 
 ### CSS
 Структура страницы: <br>
 ![image](https://github.com/user-attachments/assets/b5d6a106-8387-47b4-9b5a-8882cbcc63cd)
+Начнём с селектора body, уберём отступы и выполним заливку всей страницы:
+```css
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(61, 61, 61);   
+}
+```
+Теперь перейдём к блоку content. 
 
+```css
+#content {
+    background: rgb(19, 19, 19); /* Определим его цвет */
+    box-shadow: 10px 15px 15px black; /* Тени */
+    color: aliceblue; /* Цвет текста */
+    text-decoration: none; /* Уберём декорацию ссылок (подчёркивание) */
+    font-family: "Didact Gothic", sans-serif; /* Выберем шрифт (подключали из Google Fonts */
+    font-weight: 400; /* Жирность текста (начертание) */
+    font-style: normal; /* Стилизация текста */
+    font-size: 22px; /* Размер текста */
+
+    height: auto; /* Высота от содержимого блока */
+    width: 50%; /* Ширина на половину страницы */
+    
+    padding: 5px 5px 10px 20px; /* (или: padding-top: 10px; padding-bottom: 10px;) внутренние отступы */
+    margin: 3% auto 3% auto; /* (или: margin-left: auto; margin-right: auto;) внешние отступы. Блок по середине с небольними отсупами сверху и снизу по 3% */
+}
+```
+Остальные объекты:
+```css
+.cover-img {
+    width: 80%; 
+}
+
+
+#enimy-gif {
+    width: 50%;
+}
+```
+Заключенительный блок:
+```css
+.icon {
+    width: 25px;
+    margin-right: 5px;
+}
+
+#end {
+    display: flex;
+}
+
+#img-end {
+    width: 30%;
+    margin-right: 5%;
+}
+
+a {
+    color: aliceblue;
+    /* text-decoration: none; */
+}
+```
+`#end { display: flex; }` Этот селектор отвечает за контейнер с идентификатором end. Использование свойства `display: flex;` делает контейнер "гибким", позволяя его содержимому располагаться в одну строку (по умолчанию). <br><br>
+Flexbox помогает равномерно распределить пространство между элементами и выровнять их по оси. <br><br>
+Страница готова, теперь добавим заключительный элемент в виде анимации.
+
+## CSS анимация
+
+Добавим туман на задний план.
+
+<img src="https://github.com/TeachKait20/NoneCode/blob/main/games+git/fog.gif?raw=true">
+
+HTML-блок, который создаёт контейнер для тумана. Внутри этого контейнера есть дополнительный вложенный элемент `<div>`, необходимый для управления разными слоями тумана:
+```html
+<div class="fog"><div></div></div>
+```
+```css
+.fog {
+    position: fixed; /* Чтобы туман был на фоне */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Чтобы покрывал всю высоту экрана */
+    overflow: hidden;
+    background: url("background.jpg") center center;  
+    background-size: cover;
+    z-index: -1; /* Чтобы туман был под контентом */
+}
+
+.fog::before,
+.fog::after,
+.fog div::before, 
+.fog div::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-x;
+}
+
+.fog div::before, 
+.fog div::after {
+    left: 100%;
+}
+
+.fog::before, 
+.fog div::before {
+    background-image: url("fog-1.png");
+    animation: fogmove 20s linear 0s infinite;
+}
+
+.fog::after, 
+.fog div::after {
+    background-image: url("fog-2.png");
+    animation: fogmove 10s linear 0s infinite;
+}
+
+@keyframes fogmove {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+```
+1. `fog { ... }`
+Этот селектор стилизует основной блок тумана.
+
+`position: fixed;` - фиксирует блок тумана относительно окна браузера. Он остаётся на месте даже при прокрутке страницы, что делает его подходящим для фона.
+`top: 0; left: 0; width: 100%; height: 100%;` - растягивает блок на весь экран.
+`overflow: hidden;` - скрывает всё, что выходит за пределы контейнера.
+`background: url("background.jpg") center center;` - задаёт фоновое изображение (например, тёмное или мрачное), которое будет за туманом.
+`background-size: cover;` - заставляет фоновое изображение масштабироваться, чтобы покрыть весь экран.
+`z-index: -1;` - этот стиль перемещает блок тумана под весь основной контент сайта, чтобы туман был фоном.
+
+2. `::before` и `::after` псевдоэлементы
+Псевдоэлементы используются для добавления дополнительных слоёв тумана, создавая эффект его движения.
+
+`content: "";` - необходимо для отображения псевдоэлементов.
+`position: absolute;` - позиционирует туман внутри блока, чтобы его можно было перемещать.
+`height: 100%; width: 100%;` - делает туман на весь экран.
+`background-size: cover;` и `background-position: center;` - управляют фоном тумана, делая его адаптивным к экрану.
+`background-repeat: repeat-x;` - позволяет повторять изображение тумана по горизонтали, что создаёт бесконечный эффект при движении.
+
+3. `left: 100%;` (для `div::before` и `div::after`)
+Это начальная позиция слоёв тумана. Они начинают за пределами экрана (слева на 100%), чтобы затем "двигаться" по экрану при помощи анимации.
+
+4. Анимации тумана:
+
+`background-image: url("fog-1.png");` и `background-image: url("fog-2.png");` - у каждого слоя тумана свой рисунок (например, разные текстуры тумана), что создаёт более реалистичный и многослойный эффект.
+`animation: fogmove 20s linear 0s infinite;` - для первого слоя тумана (медленный, 20 секунд).
+`animation: fogmove 10s linear 0s infinite;` - для второго слоя тумана (быстрее, 10 секунд).
+`linear` - анимация идёт с постоянной скоростью.
+`infinite` - анимация повторяется бесконечно.
+
+5. `@keyframes fogmove { ... }`
+Это ключевые кадры анимации для движения тумана.
+
+`from { transform: translate3d(0, 0, 0); }` - туман стартует с начальной позиции.
+`to { transform: translate3d(-100%, 0, 0); }` - туман движется влево на 100%, то есть "уплывает" за экран.
+`translate3d` - используется для создания плавного трёхмерного перемещения, даже если оно происходит только по оси X.
 
