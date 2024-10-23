@@ -63,8 +63,8 @@
             <img src="for-end.jpg" id="img-end">
             <div id="links-end">
                 <p>In conclusion, you are given links to the official game on Steam and a guide on Vkplay.</p>
-                <span><img src="steam-icon.png" class="icon"></td> <td><a href="https://store.steampowered.com/app/2124490/SILENT_HILL_2/?l=russian" target="_blank">Steam</a></span> <br>
-                <span><img src="vk-play-logo.png" class="icon"></td> <td><a href="https://media.vkplay.ru/articles/secret/polnoe-prokhozhdenie-silent-hill-2-gaid-po-igre/" target="_blank">Vkplay</a></span>
+                <span><img src="steam-icon.png" class="icon"><a href="https://store.steampowered.com/app/2124490/SILENT_HILL_2/?l=russian" target="_blank">Steam</a></span> <br>
+                <span><img src="vk-play-logo.png" class="icon"><a href="https://media.vkplay.ru/articles/secret/polnoe-prokhozhdenie-silent-hill-2-gaid-po-igre/" target="_blank">Vkplay</a></span>
                 
                 <p>Guide written by: Paul</p>
             </div>
