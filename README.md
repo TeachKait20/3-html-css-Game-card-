@@ -37,13 +37,13 @@
 </html>
 ```
 
-### head
+### head html
 Основной скелет оставим без особых изменений. <br><br>
 Поменяем `title` на "About game: Name_Game". Подключим [иконку](https://github.com/TeachKait20/NoneCode/blob/main/games+git/icon.png?raw=true) для страницы. И создадим и соединим файл CSS с HTML. <br><br>
 [Шрифт](https://fonts.google.com/selection/embed) - готический. Из библиотеки Google Fonts. Подключить можно через link к `<head>` или import к CSS файлу. <br><br>
 ![image](https://github.com/user-attachments/assets/9f03ca53-2398-471c-9a23-57e9e981d592)
 
-### body
+### body html
 Структура должна быть одинаковой, со скриншотом выше: <br><br>
 Изображения/gif можно поискать на разных источниках, например, [Pinterest](https://ru.pinterest.com/). <br><br>
 
@@ -74,4 +74,10 @@
 `div` с id content, будет основным содержимым с контентом. В нём по порядку будут распологаться текст и изображения. <br><br>
 Заголовок с игрой будет в `h1`, а остальной текст в абзацах `p`. <br><br>
 в `div` links-end и end, конечная информация.
-В тегах `span` будут ссылки на разные источники с игрой и логотипы. <br><br>
+В тегах `span` будут ссылки на разные источники с игрой и логотипы.
+
+### CSS
+Структура страницы: <br>
+![image](https://github.com/user-attachments/assets/b5d6a106-8387-47b4-9b5a-8882cbcc63cd)
+
+
