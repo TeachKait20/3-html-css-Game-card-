@@ -48,7 +48,6 @@
 Изображения/gif можно поискать на разных источниках, например, [Pinterest](https://ru.pinterest.com/). <br><br>
 
 ```html
-<body>
     <div id="content">
         <h1>Silent Hill 2</h1>
         <img src="cover JPEG.jpg" class="cover-img">
@@ -60,9 +59,19 @@
         <img src="enimy.gif" id="enimy-gif">
         <p>There were many "weird" and symbolic elements included in the game. These included red squares that act as save points, a letter that disappears as the story progresses, a traffic light that works in an abandoned city, the circumstances of receiving a pistol, monsters in the real world, unrealistic building structures, etc. At the Historical Society, the protagonist discovers so-called "holes", which also include long downward stairs and vertical corridors. James repeatedly crosses through them, as if something is pulling him. Unusual corridors and doors in the floor indicate that the world seen by the main character is unreal. These holes symbolize the abyss that opened in his heart. They are the road to the depths of the soul.</p>
         <p>The visual techniques used were two symbols of the series: fog and darkness. The purpose of using them is to scare the player. They hide the horizon, limit the field of vision, blur the boundary between sky and earth, creating a fuzzy line between sleep and reality. The fog can be perceived as the thoughts of the dead that rise from the bottom of the lake and spread across Silent Hill. Another feature, the screen noise effect, creates atmosphere and intensifies as the story progresses.</p>
+        <div id="end">
+            <img src="for-end.jpg" id="img-end">
+            <div id="links-end">
+                <p>In conclusion, you are given links to the official game on Steam and a guide on Vkplay.</p>
+                <span><img src="steam-icon.png" class="icon"></td> <td><a href="https://store.steampowered.com/app/2124490/SILENT_HILL_2/?l=russian" target="_blank">Steam</a></span> <br>
+                <span><img src="vk-play-logo.png" class="icon"></td> <td><a href="https://media.vkplay.ru/articles/secret/polnoe-prokhozhdenie-silent-hill-2-gaid-po-igre/" target="_blank">Vkplay</a></span>
+                
+                <p>Guide written by: Paul</p>
+            </div>
+        </div>
     </div>
-
-</body>
 ```
 `div` с id content, будет основным содержимым с контентом. В нём по порядку будут распологаться текст и изображения. <br><br>
 Заголовок с игрой будет в `h1`, а остальной текст в абзацах `p`. <br><br>
+в `div` links-end и end, конечная информация.
+В тегах `span` будут ссылки на разные источники с игрой и логотипы. <br><br>
